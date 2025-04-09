@@ -25,10 +25,6 @@ auto core::launching_device() -> awaitable<bool> {
 
         if (!p_r) {
 
-            std::cout << p_r << " ping return\n";
-
-            std::cout << "Sending m packet\n";
-
             auto f2 = co_await _wol->send_magic_packet(_mac_addr, _ip);
 
             co_return true;
